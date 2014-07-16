@@ -34,4 +34,18 @@ The hardest part of the learning journey is thinking in FRP. It's a lot about le
 
 学习之旅中遇到最困难的部分是用FRP的方式思考。这需要摒弃古老而经典的命令状态式编程，并且强迫你的大脑按不同的范式工作。我没有在互联网上发现这个方面的任何指南，同时我认为世上需要一个实用教程关于如何FRP的思考方式，这样你才能得以开始。文档库可以照亮你之后的道路。我希望这些能帮到你。
 
+## "What is Functional Reactive Programming (FRP)?"
 
+## “什么是函数响应式编程(FRP)?”
+
+There are plenty of bad explanations and definitions out there on the internet.
+
+互联网上有大量糟糕的解释和定义。
+
+[Wikipedia](https://en.wikipedia.org/wiki/Functional_reactive_programming) is too generic and theoretical as usual. [Stackoverflow](http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming)'s canonical answer is obviously not suitable for newcomers. [Reactive Manifesto](http://www.reactivemanifesto.org/) sounds like the kind of thing you show to your project manager or the businessmen at your company. Microsoft's [Rx terminology](https://rx.codeplex.com/) "Rx = Observables + LINQ + Schedulers" is so heavy and Microsoftish that most of us are left confused. Terms like "reactive" and "propagation of change" don't convey anything specifically different to what your typical MV* and favorite language already does. Of course my framework views react to the models. Of course change is propagated. If it wouldn't, nothing would be rendered.
+
+[维基](https://en.wikipedia.org/wiki/Functional_reactive_programming) 像通常一样泛泛和理论化。[Stackoverflow](http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming) 里的标准答案明显不适合新人。[Reactive Manifesto](http://www.reactivemanifesto.org/) 听起来像在公司展示给你的项目经理或者商务人员看。微软的[Rx terminology](https://rx.codeplex.com/) "Rx = Observables + LINQ + Schedulers" 实在是太重型和微软化让我们大多数人感到困惑。像"响应式"和"propagation of change"这样的术语没有传达任何跟你使用典型的MV*和最爱的语言已经做到的之间特殊的差别。当然了，我的框架视图响应模型。当然了，变化在传播。如果没有，没有东西会被渲染。
+
+So let's cut the bullshit.
+
+让我们少说废话。
