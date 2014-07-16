@@ -1,11 +1,14 @@
 The introduction to Reactive Programming you've been missing
+
 关于你错过的响应式编程的介绍
 
 (by @andrestaltz)
+
 作者andrestaltz
 ====
 
 So you're curious in learning this new thing called (Functional) Reactive Programming (FRP).
+
 所以你对学习新兴的响应式（函数式）编程很感兴趣。
 
 Learning it is hard, even harder by the lack of good material. When I started, I tried looking for tutorials. I found only a handful of practical guides, but they just scratched the surface and never tackled the challenge of building the whole architecture around it. Library documentations often don't help when you're trying to understand some function. I mean, honestly, look at this:
