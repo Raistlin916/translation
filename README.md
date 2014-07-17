@@ -1,6 +1,6 @@
 ## The introduction to Reactive Programming you've been missing
 
-## 关于你错过的响应式编程的介绍
+## 关于你错过了的响应式编程的简介
 
 (by [@andrestaltz](https://twitter.com/andrestaltz))
 
