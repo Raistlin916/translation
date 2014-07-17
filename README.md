@@ -60,6 +60,6 @@ In a way, this isn't anything new. Event buses or your typical click events are 
 
 **On top of that, you are given an amazing toolbox of functions to combine, create and filter any of those streams.** That's where the "functional" magic kicks in. A stream can be used as an input to another one. Even multiple streams can be used as inputs to another stream. You can _merge_ two streams. You can _filter_ a stream to get another one that has only those events you are interested in. You can _map_ data values from one stream to another new one.
 
-**最总要的是，你得到了一个令人惊异的工具箱，可以组合函数，创建并过滤任意的流。**
+**最总要的是，你得到了一个令人惊异的工具箱，可以组合函数，创建并过滤任意流。**那就是“函数式”的magic kicks in。一个流能够被用作另一个流的输入。甚至多个流也能作为另一个流的输入。你能够_过滤_一个流去得到另外一个只拥有你感兴趣的事件的流。你可以映射数据值从一个流到另外一个新流。
 
 
