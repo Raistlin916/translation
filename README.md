@@ -62,4 +62,12 @@ In a way, this isn't anything new. Event buses or your typical click events are 
 
 **最总要的是，你得到了一个令人惊异的工具箱，可以组合函数，创建并过滤任意流。**那就是“函数式”的magic kicks in。一个流能够被用作另一个流的输入。甚至多个流也能作为另一个流的输入。你可以_合并_两个流，可以_过滤_一个流从而得到另外一个只拥有你感兴趣的事件的流，可以把数据值从一个流_映射_到另外一个新的流。
 
+If streams are so central to FRP, let's take a careful look at them, starting with our familiar "clicks on a button" event stream.
 
+如果流对FRP而言是如此核心，那么让我们仔细的研究一下，通过我们熟悉的“点击按钮”事件流。
+
+![Click event stream](https://gist.githubusercontent.com/staltz/868e7e9bc2a7b8c1f754/raw/49da694b2489f9e7b7276df31a1dcb206179a496/zclickstream.png)
+
+A stream is a sequence of **ongoing events ordered in time**. It can emit three different things: a value (of some type), an error, or a "completed" signal. Consider that the "completed" takes place, for instance, when the current window or view containing that button is closed.
+
+一个流是一个按时间排序的正在进行的事件序列。它能够发出三个不同的东西：一个值（按某种格式），一个错误，一个完成的事件。考虑一下发生“完成”，例如，在当前窗口或包含该按钮的视图被关闭时。
