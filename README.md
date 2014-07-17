@@ -56,7 +56,7 @@ So let's cut the bullshit.
 
 In a way, this isn't anything new. Event buses or your typical click events are really an asynchronous event stream, on which you can observe and do some side effects. FRP is that idea on steroids. You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc. For example, imagine your Twitter feed would be a data stream in the same fashion that click events are. You can listen to that stream and react accordingly.
 
-在某种程度上，这不是什么新东西。事件总线或者典型的点击事件真的是一个异步事件流，
+在某种程度上，这不是什么新东西。事件总线或者典型的点击事件真的是一个可以观察并做一些副作用的异步事件流。 FRP is that idea on steroids。你能够去创造任何东西的数据流，不仅来自点击和悬浮事件。流是廉价和无处不在的，任何东西可以作为一个流：变量，用户输入，属性，缓存，数据结构等等。举例而言，想象你的Twitter关注列表是一个像点击事件一样的数据流。你可以监听那个流并做相应的响应。
 
 
 
