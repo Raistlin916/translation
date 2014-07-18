@@ -71,3 +71,9 @@ If streams are so central to FRP, let's take a careful look at them, starting wi
 A stream is a sequence of **ongoing events ordered in time**. It can emit three different things: a value (of some type), an error, or a "completed" signal. Consider that the "completed" takes place, for instance, when the current window or view containing that button is closed.
 
 一个流是一个按时间排序的正在进行的事件序列。它能够发出三种不同的东西：值（按某种格式），错误和“完成”事件。考虑一下发生“完成”，例如，在当前窗口或包含该按钮的视图被关闭时。
+
+We capture these emitted events only **asynchronously**, by defining a function that will execute when a value is emitted, another function when an error is emitted, and another function when 'completed' is emitted. Sometimes these last two can be omitted and you can just focus on defining the function for values. The "listening" to the stream is called **subscribing**. The functions we are defining are observers. The stream is the subject (or "observable") being observed. This is precisely the [Observer Design Pattern](https://en.wikipedia.org/wiki/Observer_pattern).
+
+我们只能异步捕获那些被发出的事件，通过定义一个当发出值时会执行的函数，一个当发出错误时执行的函数，和一个发出“完成”时执行的函数。有时最后两个可以被忽略，你可以只关注定义给值的函数。“监听”流被称作“订阅”。定义的那些函数是观察者。流是被观察的主体。这在[观察者设计模式](https://en.wikipedia.org/wiki/Observer_pattern)中有所讨论。
+
+
