@@ -111,3 +111,7 @@ First, let's make a counter stream that indicates how many times a button was cl
                vvvvvvvvv scan(+) vvvvvvvvv
 counterStream: ---1----2--3----4------5-->
 ```
+
+The `map(f)` function replaces (into the new stream) each emitted value according to a function `f` you provide. In our case, we mapped to the number 1 on each click. The `scan(g)` function aggregates all previous values on the stream, producing value `x = g(accumulated, current)`, where `g` was simply the add function in this example. Then, `counterStream` emits the total number of clicks whenever a click happens.
+
+`map(f)`函数将每个发出的值根据你提供的`f`函数替换（到新的流）。在我们的案例中，我们将每次点击映射成数字1。`scan(g)`函数在流中聚合所有之前的值，产生值`x = g(accumulated, current)`，`g`在这个例子中是简单的加法函数。然后，任何时候点击发生时，`counterStream`发出点击总数。
