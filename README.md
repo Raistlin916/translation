@@ -76,4 +76,38 @@ We capture these emitted events only **asynchronously**, by defining a function 
 
 我们只能异步捕获那些被发出的事件，通过定义一个当发出值时会执行的函数，一个当发出错误时执行的函数，和一个发出“完成”时执行的函数。有时最后两个可以被忽略，你可以只关注定义给值的函数。“监听”流被称作“订阅”。定义的那些函数是观察者。流是被观察的主体。这在[观察者设计模式](https://en.wikipedia.org/wiki/Observer_pattern)中有所讨论。
 
+An alternative way of drawing that diagram is with ASCII, which we will use in some parts of this tutorial:
+```
+--a---b-c---d---X---|->
 
+a, b, c, d are emitted values
+X is an error
+| is the 'completed' signal
+---> is the timeline
+```
+
+绘制该图表的一个可行方案是使用ASCII码，我们会在本教程的某些部分使用：
+```
+--a---b-c---d---X---|->
+
+a, b, c, d are emitted values
+X is an error
+| is the 'completed' signal
+---> is the timeline
+```
+
+Since this feels so familiar already, and I don't want you to get bored, let's do something new: we are going to create new click event streams transformed out of the original click event stream.
+
+由于这感觉已经太熟悉了，并且我不想让你感到厌倦，我们来做些新东西：我们要创造从原有的事件流中转变出来的新的点击事件流。
+
+First, let's make a counter stream that indicates how many times a button was clicked. In common FRP libraries, each stream has many functions attached to it, such as `map`, `filter`, `scan`, etc. When you call one of these functions, such as `clickStream.map(f)`, it returns a **new stream** based on the click stream. It does not modify the original click stream in any way. This is a property called **immutability**, and it goes together with FRP streams just like pancakes are good with syrup. That allows us to chain functions like `clickStream.map(f).scan(g)`:
+
+首先，我们来做一个表明按钮有多少次点击的计数流。在常见的FRP库中，每个流都有很多方法来连接到它，像`map`,`filter`,`scan`等等。当你调用这其中的一个方法，类似`clickStream.map(f)`，它会返回一个**新流**基于点击流。它不会以任何方式修改原有点击流。这个属性叫做不变性，它跟FRP流的关系就像煎饼配糖浆一样合适。这允许我们链式调用函数，像`clickStream.map(f).scan(g)`:
+
+```
+  clickStream: ---c----c--c----c------c-->
+               vvvvv map(c becomes 1) vvvv
+               ---1----1--1----1------1-->
+               vvvvvvvvv scan(+) vvvvvvvvv
+counterStream: ---1----2--3----4------5-->
+```
