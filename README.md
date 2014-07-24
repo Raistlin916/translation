@@ -115,3 +115,9 @@ counterStream: ---1----2--3----4------5-->
 The `map(f)` function replaces (into the new stream) each emitted value according to a function `f` you provide. In our case, we mapped to the number 1 on each click. The `scan(g)` function aggregates all previous values on the stream, producing value `x = g(accumulated, current)`, where `g` was simply the add function in this example. Then, `counterStream` emits the total number of clicks whenever a click happens.
 
 `map(f)`函数将每个发出的值根据你提供的`f`函数替换（到新的流）。在我们的案例中，我们将每次点击映射成数字1。`scan(g)`函数在流中聚合所有之前的值，产生值`x = g(accumulated, current)`，`g`在这个例子中是简单的加法函数。然后，任何时候点击发生时，`counterStream`发出点击总数。
+
+To show the real power of FRP, let's just say that you want to have a stream of "double click" events. To make it even more interesting, let's say we want the new stream to consider triple clicks as double clicks, or in general, multiple clicks (two or more). Take a deep breath and imagine how you would do that in a traditional imperative and stateful fashion. I bet it sounds fairly nasty and involves some variables to keep state and some fiddling with time intervals.
+
+为了显示FRP真正的威力，且考虑想要一个“双击”事件流的情况。为了更有趣，考虑要做将三击当做双击的新流，或者一般来说，多次点击(两次或更多)。深呼吸，想象你要怎么使用传统的命令状态式编程，去做这个。我打赌，这听起来相当令人讨厌，需要涉及许多来保存状态的变量和摆弄一些计时器。
+
+
