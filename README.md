@@ -98,7 +98,7 @@ X is an error
 
 Since this feels so familiar already, and I don't want you to get bored, let's do something new: we are going to create new click event streams transformed out of the original click event stream.
 
-由于这感觉已经太熟悉了，并且我不想让你感到厌倦，我们来做些新东西：我们要创造从原有的事件流中转变出来的新的点击事件流。
+由于这感觉太熟悉了，我不想让你感到厌倦，所以我们来做些新东西：我们要创造从原有的事件流中转变出来的新的点击事件流。
 
 First, let's make a counter stream that indicates how many times a button was clicked. In common FRP libraries, each stream has many functions attached to it, such as `map`, `filter`, `scan`, etc. When you call one of these functions, such as `clickStream.map(f)`, it returns a **new stream** based on the click stream. It does not modify the original click stream in any way. This is a property called **immutability**, and it goes together with FRP streams just like pancakes are good with syrup. That allows us to chain functions like `clickStream.map(f).scan(g)`:
 
