@@ -120,4 +120,13 @@ To show the real power of FRP, let's just say that you want to have a stream of 
 
 为了显示FRP真正的威力，且考虑想要一个“双击”事件流的情况。为了更有趣，考虑要做将三击当做双击的新流，或者一般来说，多次点击(两次或更多)。深呼吸，想象你要怎么使用传统的命令状态式编程，去做这个。我打赌，这听起来相当令人讨厌，需要涉及许多来保存状态的变量和摆弄一些计时器。
 
+Well, in FRP it's pretty simple. In fact, the logic is just 4 lines of code. But let's ignore code for now. Thinking in diagrams is the best way to understand and build streams, whether you're a beginner or an expert.
+
+然而，在FRP中这相当容易。实际上，整个逻辑只有四行代码。但是让我们现在先忽略代码。通过图标思考是理解和建立流最好的方法，无论你是新手还是专家。
+
+![Multiple clicks stream](https://gist.githubusercontent.com/staltz/868e7e9bc2a7b8c1f754/raw/b580ad4a33b63acb2ced9b8e5e90faab8ca7ef26/zmulticlickstream.png)
+
+Grey boxes are functions transforming one stream into another. First we accumulate clicks in lists, whenever 250 milliseconds of "event silence" has happened (that's what `buffer(stream.throttle(250ms))` does, in a nutshell. Don't worry about understanding the details at this point, we are just demoing FRP for now). The result is a stream of lists, from which we apply `map()` to map each list to an integer matching the length of that list. Finally, we ignore `1` integers using the `filter(x >= 2)` function. That's it: 3 operations to produce our intended stream. We can then subscribe ("listen") to it to react accordingly how we wish.
+
+
 
